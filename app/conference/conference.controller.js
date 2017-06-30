@@ -9,6 +9,7 @@ export default class ConferenceController {
   }
 
   chargement() {
+    this.loaded = false;
     this.conferenceService.getListe().then((data) => {
       this.liste = data;
       this.loaded = true;
@@ -28,5 +29,9 @@ export default class ConferenceController {
    */
   $onInit() {
     this.chargement();
+  }
+
+  resetForm() {
+    this.conference = {};
   }
 }

@@ -1,7 +1,24 @@
-<div class="liste" ng-repeat="conf in $ctrl.liste track by $index">
-  <div>{{ conf.titre }}</div>
-  <div>{{ conf.description }}</div>
-  <div>{{ conf.date }}</div>
-  <div>{{ conf.logoUrl}}</div>
-  <button ng-click="$ctrl.edit(conf)">edit</button>
+<div class="field">
+  <label class="label">Recherche</label>
+  <input type="text" class="input" ng-model="$ctrl.query"/>
 </div>
+<table class="table" >
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Logo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="conf in $ctrl.liste | filter:$ctrl.query track by $index" >
+      <td>{{ conf.titre }}</td>
+      <td>{{ conf.description }}</td>
+      <td>{{ conf.date }}</td>
+      <td>{{ conf.logoUrl }}</td>
+      <td><button class="button is-info is-outlined" ng-click="$ctrl.edit(conf)" >edit</button></td>
+    </tr>
+  </tbody>
+</table>

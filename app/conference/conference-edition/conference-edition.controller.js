@@ -24,8 +24,11 @@ export default class ConferenceEditionController {
   }
 
   nouveau() {
+    console.log('etst')
     this.conference = {};
     this.getButtonTitle();
+    this.form.$setPristine();
+    this.onReset();
   }
 
   submit() {
