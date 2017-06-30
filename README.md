@@ -15,7 +15,7 @@ npm peut être également utilisé
 
 Le fichier `server-start.js` contient les variables d'environnement à ajuster si besoin
 
-par default en développement : 
+par defaut en développement : 
  - le serveur est lancé sur http://localhost:3001
  - le client est lancé sur http://localhost:8080
 
