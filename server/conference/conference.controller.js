@@ -1,6 +1,7 @@
 /**
  * CRUD sur les conférences
  */
+import moment from 'moment';
 import Conference from './conference.model';
 
 function create(req, res) {
@@ -19,7 +20,13 @@ function create(req, res) {
 }
 
 function list(req, res) {
-  Conference.find().sort('-date').exec().then(
+  let param;
+  // filtre sur les dates à venir
+  if (req.query && req.query.dateMin) {
+    const date = req.query.dateMin;
+    param = { date: { $gt: moment(date).toDate() } };
+  }
+  Conference.find(param).sort('-date').exec().then(
     rslt => res.json(rslt),
     () => res.status(500).send({
       message: 'erreur lors de la récupération de la liste des conférences',
