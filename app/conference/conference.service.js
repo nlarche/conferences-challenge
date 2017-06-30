@@ -1,3 +1,16 @@
+import moment from 'moment';
+
+const mapConference = (conf) => {
+  const tmp = {
+    id: conf._id, // eslint-disable-line no-underscore-dangle
+    titre: conf.titre,
+    description: conf.description,
+    date: moment(conf.date).format('YYYY-MM-DD'),
+    logoUrl: conf.logoUrl,
+  };
+  return tmp;
+};
+
 export default class ConferenceService {
   constructor($http) {
     'ngInject';
@@ -7,12 +20,13 @@ export default class ConferenceService {
   }
 
   getListe() {
-    return this.$http.get(this.api).then(response => response.data);
+    const today = moment().format('YYYY-MM-DD');
+    return this.$http.get(`${this.api}?dateMin=${today}`).then(response => response.data.map(mapConference));
   }
 
   saveOrUpdate(conference) {
     let action;
-    if (conference._id) {
+    if (conference.id) {
       action = this.update(conference);
     } else {
       action = this.save(conference);
@@ -25,6 +39,6 @@ export default class ConferenceService {
   }
 
   update(conference) {
-    return this.$http.put(`${this.api}/${conference._id}`, conference);
+    return this.$http.put(`${this.api}/${conference.id}`, conference);
   }
 }

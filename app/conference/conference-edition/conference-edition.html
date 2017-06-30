@@ -1,35 +1,35 @@
 <form name="$ctrl.form" class="edition" novalidate ng-submit="$ctrl.submit()">
-  <div class="field" >
+  <div class="field">
     <label class="label" for="titre">titre</label>
     <input class="input" id="titre" type="text" name="titre" ng-model="$ctrl.conference.titre" required/>
     <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.titre.$error" role="alert">
-      <ng-message when="required" class="help is-danger" >Obligatoire</ng-message>
+      <ng-message when="required" class="help is-danger">Obligatoire</ng-message>
     </ng-messages>
   </div>
-  <div class="field" >
+  <div class="field">
     <label class="label" for="description">description</label>
-    <input class="input" id="description" type="text" name="description" ng-model="$ctrl.conference.description" required />
+    <input class="input" id="description" type="text" name="description" ng-model="$ctrl.conference.description" required/>
     <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.description.$error" role="alert">
-      <ng-message when="required" class="help is-danger" >Obligatoire</ng-message>
+      <ng-message when="required" class="help is-danger">Obligatoire</ng-message>
     </ng-messages>
   </div>
-  <div class="field"  >
+  <div class="field">
     <label class="label" for="date">date</label>
-    <input class="input" id="date" type="text" name="date" ng-model="$ctrl.conference.date" required validate-date />
+    <input class="input" id="date" type="text" name="date" ng-model="$ctrl.conference.date" required validate-date/>
     <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.date.$error" role="alert">
-      <ng-message when="required" class="help is-danger" >Obligatoire</ng-message>
-      <ng-message when="date" class="help is-danger" >format de date invalide YYYY-MM-DD</ng-message>
+      <ng-message when="required" class="help is-danger">Obligatoire</ng-message>
+      <ng-message when="date" class="help is-danger">format de date invalide YYYY-MM-DD</ng-message>
     </ng-messages>
   </div>
-  <div class="field" >
+  <div class="field">
     <label class="label" for="logo">logo</label>
-    <input class="input" id="logo" type="text" name="logoUrl" ng-model="$ctrl.conference.logoUrl" required />
+    <input class="input" id="logo" type="text" name="logoUrl" ng-model="$ctrl.conference.logoUrl" required/>
     <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.logoUrl.$error" role="alert">
-      <ng-message when="required" class="help is-danger" >Obligatoire</ng-message>
+      <ng-message when="required" class="help is-danger">Obligatoire</ng-message>
     </ng-messages>
   </div>
-  <div class="field"  >
-  <input type="submit" ng-value="$ctrl.buttonTitle" class="button primary">
-  <input type="button" value="Nouveau" ng-click="$ctrl.nouveau()" class="button is-info is-outlined" >
+  <div class="field">
+    <input type="submit" ng-value="$ctrl.buttonTitle" class="button primary">
+    <input type="button" value="Nouveau" ng-click="$ctrl.nouveau()" class="button is-info is-outlined">
   </div>
 </form>

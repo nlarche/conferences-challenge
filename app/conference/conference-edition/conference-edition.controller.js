@@ -4,8 +4,6 @@ export default class ConferenceEditionController {
   constructor() {
     this.conference = {};
     this.getButtonTitle();
-
-    this.datePattern = /^(\d{4})-(\d{2})-(\d{2})$/;
   }
 
   $onChanges(changes) {
@@ -16,7 +14,7 @@ export default class ConferenceEditionController {
   }
 
   getButtonTitle() {
-    if (this.conference && this.conference._id) {
+    if (this.conference && this.conference.id) {
       this.buttonTitle = 'Editer';
     } else {
       this.buttonTitle = 'Ajouter';
@@ -24,8 +22,6 @@ export default class ConferenceEditionController {
   }
 
   nouveau() {
-    console.log('etst')
-    this.conference = {};
     this.getButtonTitle();
     this.form.$setPristine();
     this.onReset();
