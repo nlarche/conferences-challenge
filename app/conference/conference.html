@@ -1,0 +1,5 @@
+
+<conference-edition conference="$ctrl.conference" on-submit="$ctrl.saveConference($event)"></conference-edition>
+<div ng-if="$ctrl.loaded">
+  <conference-liste liste="$ctrl.liste" on-edit="$ctrl.onEditConference($event)"></conference-liste>
+</div>

@@ -1,0 +1,35 @@
+<form name="$ctrl.form" class="edition" novalidate ng-submit="$ctrl.submit()">
+  <div>
+    <label for="titre">titre</label>
+    <input id="titre" type="text" name="titre" ng-model="$ctrl.conference.titre" required/>
+    <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.titre.$error" role="alert">
+      <ng-message when="required">Obligatoire</ng-message>
+    </ng-messages>
+  </div>
+  <div>
+    <label for="description">description</label>
+    <input id="description" type="text" name="description" ng-model="$ctrl.conference.description" required />
+    <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.description.$error" role="alert">
+      <ng-message when="required">Obligatoire</ng-message>
+    </ng-messages>
+  </div>
+  <div>
+    <label for="date">date</label>
+    <input id="date" type="text" name="date" ng-model="$ctrl.conference.date" required validate-date />
+    <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.date.$error" role="alert">
+      <ng-message when="required">Obligatoire</ng-message>
+      <ng-message when="date">format de date invalide YYYY-MM-DD</ng-message>
+    </ng-messages>
+  </div>
+  <div>
+    <label for="logo">logo</label>
+    <input id="logo" type="text" name="logoUrl" ng-model="$ctrl.conference.logoUrl" required />
+    <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.logoUrl.$error" role="alert">
+      <ng-message when="required">Obligatoire</ng-message>
+    </ng-messages>
+  </div>
+  <input type="submit" ng-value="$ctrl.buttonTitle">
+  <input type="button" value="Nouveau" ng-click="$ctrl.nouveau()">
+</form>
+<pre>{{$ctrl.form | json}}</pre>
+

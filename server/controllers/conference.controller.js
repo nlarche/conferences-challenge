@@ -13,7 +13,7 @@ function create(req, res) {
   });
   conference.save().then(
     () => res.json(conference),
-    () => res.status(400).send({
+    () => res.status(500).send({
       message: 'erreur lors de la création d\'un conférence',
     }));
 }
@@ -21,7 +21,7 @@ function create(req, res) {
 function list(req, res) {
   Conference.find().sort('-date').exec().then(
     rslt => res.json(rslt),
-    () => res.status(400).send({
+    () => res.status(500).send({
       message: 'erreur lors de la récupération de la liste des conférences',
     }));
 }
@@ -39,7 +39,7 @@ function update(req, res) {
   Conference.findByIdAndUpdate(
     { _id: conf._id }, updated).then( // eslint-disable-line no-underscore-dangle
     rslt => res.json(rslt),
-    () => res.status(400).send({
+    () => res.status(500).send({
       message: 'erreur lors de la mise à jour d\'une conférence',
     }));
 }
@@ -51,7 +51,7 @@ function getById(req, res, next, id) {
       next();
     },
     () => {
-      res.status(400).send({
+      res.status(500).send({
         message: 'erreur lors de la récupération d\'une conférence',
       });
       next();

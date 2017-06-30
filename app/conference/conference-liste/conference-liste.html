@@ -1,0 +1,7 @@
+<div class="liste" ng-repeat="conf in $ctrl.liste track by $index">
+  <div>{{ conf.titre }}</div>
+  <div>{{ conf.description }}</div>
+  <div>{{ conf.date }}</div>
+  <div>{{ conf.logoUrl}}</div>
+  <button ng-click="$ctrl.edit(conf)">edit</button>
+</div>
