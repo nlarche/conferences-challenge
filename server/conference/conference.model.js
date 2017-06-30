@@ -1,7 +1,10 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
 const conferenceSchema = new Schema({
-  titre: String,
+  titre: {
+    type: String,
+    required: true,
+  },
   description: String,
   date: Date,
   logoUrl: String,

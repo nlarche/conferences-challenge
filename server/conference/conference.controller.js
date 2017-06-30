@@ -1,7 +1,7 @@
 /**
  * CRUD sur les conférences
  */
-import Conference from '../models/conference.model';
+import Conference from './conference.model';
 
 function create(req, res) {
   const body = req.body;

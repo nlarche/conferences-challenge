@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import routes from '../routes/conference.routes';
+import routes from '../conference/conference.routes';
 
 const app = express();
 
