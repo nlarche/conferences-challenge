@@ -9,7 +9,7 @@ CRUD avec la stack MEAN
 
 3- yarn start
 
-npm peut être également utilisés
+npm peut être également utilisé
 
 ## Variable d'environnement
 
