@@ -26,7 +26,7 @@ function list(req, res) {
     const date = req.query.dateMin;
     param = { date: { $gt: moment(date).toDate() } };
   }
-  Conference.find(param).sort('-date').exec().then(
+  Conference.find(param).sort('+date').exec().then(
     rslt => res.json(rslt),
     () => res.status(500).send({
       message: 'erreur lors de la récupération de la liste des conférences',
