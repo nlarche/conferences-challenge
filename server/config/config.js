@@ -1,5 +1,7 @@
 const envVars = process.env;
-
+/**
+ * Configuration des variables d'environnement de l'application
+ */
 const config = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,

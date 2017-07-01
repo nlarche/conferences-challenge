@@ -7,7 +7,9 @@ export default class ConferenceController {
 
     this.chargement = this.chargement.bind(this);
   }
-
+  /**
+   * Chargement de la liste des conférence
+   */
   chargement() {
     this.loaded = false;
     this.conferenceService.getListe().then((data) => {
@@ -15,11 +17,15 @@ export default class ConferenceController {
       this.loaded = true;
     });
   }
-
+  /**
+   * Callback appelée du click sur le bouton editer d'un conférence
+   */
   onEditConference($event) {
     this.conference = $event.conference;
   }
-
+  /**
+   * CallBack appelée au submit du formulaire
+   */
   saveConference($event) {
     this.conferenceService.saveOrUpdate($event.conference).then(this.chargement);
   }
@@ -31,6 +37,9 @@ export default class ConferenceController {
     this.chargement();
   }
 
+  /**
+   * Callback appelée au reset du formulaire
+   */
   resetForm() {
     this.conference = {};
   }

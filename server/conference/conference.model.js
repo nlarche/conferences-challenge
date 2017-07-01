@@ -1,5 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
-
+/**
+ * Model conférence
+ */
 const conferenceSchema = new Schema({
   titre: {
     type: String,

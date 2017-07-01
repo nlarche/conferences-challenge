@@ -1,5 +1,8 @@
 export default class ConferenceController {
-    edit(conf) {
+  /**
+   * Click du bouton edité
+   */
+  edit(conf) {
     this.onEdit({
       $event: {
         conference: conf,

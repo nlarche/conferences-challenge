@@ -5,9 +5,11 @@ CRUD avec la stack MEAN
 
 1- yarn install
 
-2- yarn run server 
+2- yarn run server
 
 3- yarn start
+
+4- yarn test
 
 npm peut être également utilisé
 
@@ -15,7 +17,7 @@ npm peut être également utilisé
 
 Le fichier `server-start.js` contient les variables d'environnement à ajuster si besoin
 
-par defaut en développement : 
+par defaut en développement :
  - le serveur est lancé sur http://localhost:3001
  - le client est lancé sur http://localhost:8080
 
@@ -45,3 +47,12 @@ Projet
 CSS : [bulma](http://bulma.io/)
 
 La partie client est construite grâce à webpack
+
+## Guide de style
+
+Utilisation du guide de style [airbnb](https://github.com/airbnb/javascript) via leur plugin eslint
+
+## TODO
+
+* Ajouter des tests unitaire sur tous les controllers de l'application angular
+* Ajouter des tests unitaire sur le server

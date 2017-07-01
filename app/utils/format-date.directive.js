@@ -1,5 +1,7 @@
 import moment from 'moment';
-
+/**
+ * Directive de validation de date au format YYYY-MM-DD
+ */
 export default function formatDate() {
   return {
     restrict: 'A',

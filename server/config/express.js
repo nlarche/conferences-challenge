@@ -8,13 +8,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Pas de cache pour les requetes reste.
+// Pas de cache pour les requetes REST.
 app.use((req, res, next) => {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   next();
 });
 
 app.use('/api/v1/conferences', routes);
-
 
 export default app;

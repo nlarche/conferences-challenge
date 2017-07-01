@@ -4,6 +4,9 @@
 import moment from 'moment';
 import Conference from './conference.model';
 
+/**
+ * Création d'une conférence
+ */
 function create(req, res) {
   const body = req.body;
   const conference = new Conference({
@@ -19,6 +22,9 @@ function create(req, res) {
     }));
 }
 
+/**
+ * Liste des conférences
+ */
 function list(req, res) {
   let param;
   // filtre sur les dates à venir
@@ -33,6 +39,9 @@ function list(req, res) {
     }));
 }
 
+/**
+ * Mise à jour des conférences
+ */
 function update(req, res) {
   const conf = req.conf; // setté par getById
   const body = req.body;
@@ -51,6 +60,9 @@ function update(req, res) {
     }));
 }
 
+/**
+ * Récupération d'un conférence
+ */
 function getById(req, res, next, id) {
   Conference.findById(id).exec().then(
     (conference) => {
