@@ -2,6 +2,9 @@
   <label class="label">Recherche</label>
   <input type="text" class="input" ng-model="$ctrl.query"/>
 </div>
+<div class="hero">
+<h1 class-"title is-1" >Liste des conférences à venir</h1>
+</div>
 <table class="table" >
   <thead>
     <tr>
@@ -13,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="conf in $ctrl.liste | filter:$ctrl.query | orderBy:'date':true track by $index" >
+    <tr ng-repeat="conf in $ctrl.liste | filter:$ctrl.query | orderBy:'date':false track by $index" >
       <td>{{ conf.titre }}</td>
       <td>{{ conf.description }}</td>
       <td>{{ conf.date }}</td>
