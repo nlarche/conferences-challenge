@@ -6,7 +6,7 @@ import Controller from './conference-liste.controller';
 describe('Test du controller de la liste : ', () => {
   it('Le controller est instancié', () => {
     const ctrl = new Controller();
-    expect(ctrl).to.be.defined;
+    expect(ctrl).to.be.not.undefined;
   });
 
   it('La fonction edit doit appeler la fonction onEdit', () => {
