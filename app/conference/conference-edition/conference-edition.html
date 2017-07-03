@@ -15,10 +15,11 @@
   </div>
   <div class="field">
     <label class="label" for="date">date</label>
-    <input class="input" id="date" type="text" name="date" ng-model="$ctrl.conference.date" required validate-date/>
+    <input class="input" id="date" type="text" name="date" ng-model="$ctrl.conference.date" required validate-date date-a-venir/>
     <ng-messages ng-if="$ctrl.form.$submitted" for="$ctrl.form.date.$error" role="alert">
       <ng-message when="required" class="help is-danger">Obligatoire</ng-message>
       <ng-message when="date" class="help is-danger">format de date invalide YYYY-MM-DD</ng-message>
+      <ng-message when="dateAVenir" class="help is-danger">La date doit être dans le futur</ng-message>
     </ng-messages>
   </div>
   <div class="field">

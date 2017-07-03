@@ -1,11 +1,12 @@
 import moment from 'moment';
+import { dateFormat } from '../utils/constant';
 
 const mapConference = (conf) => {
   const tmp = {
     id: conf._id, // eslint-disable-line no-underscore-dangle
     titre: conf.titre,
     description: conf.description,
-    date: moment(conf.date).format('YYYY-MM-DD'),
+    date: moment(conf.date).format(dateFormat),
     logoUrl: conf.logoUrl,
   };
   return tmp;
@@ -20,7 +21,7 @@ export default class ConferenceService {
   }
 
   getListe() {
-    const today = moment().format('YYYY-MM-DD');
+    const today = moment().format(dateFormat);
     return this.$http.get(`${this.api}?dateMin=${today}`).then(response => response.data.map(mapConference));
   }
 
