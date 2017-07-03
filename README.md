@@ -57,3 +57,5 @@ Utilisation du guide de style [airbnb](https://github.com/airbnb/javascript) via
 * Ajouter des tests unitaire sur tous les controllers de l'application angular
 * Ajouter des tests unitaire sur le server
 * Ajouter l'intégration continue - test - eslint
+* Gestion propre des erreurs
+* Gestion des images
