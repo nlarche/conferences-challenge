@@ -7,9 +7,9 @@ export default function formatDate() {
     restrict: 'A',
     require: 'ngModel',
     link: (scope, element, attrs, ctrl) => {
-
       ctrl.$validators.date = (modelValue, viewValue) => { // eslint-disable-line no-param-reassign
-        return moment(viewValue, 'YYYY-MM-DD', true).isValid();
+        const date = moment(viewValue, 'YYYY-MM-DD', true);
+        return date.isValid();
       };
     },
   };
