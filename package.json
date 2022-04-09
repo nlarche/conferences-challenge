@@ -19,7 +19,7 @@
     "body-parser": "^1.17.2",
     "bulma": "^0.4.2",
     "express": "^4.15.3",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "mongoose": "^4.11.0"
   },
   "devDependencies": {
