@@ -12,7 +12,7 @@
     "lint" : "eslint ."
   },
   "dependencies": {
-    "angular": "^1.6.4",
+    "angular": "^1.8.3",
     "angular-messages": "^1.6.4",
     "babel-polyfill": "^6.23.0",
     "babel-register": "^6.24.1",
